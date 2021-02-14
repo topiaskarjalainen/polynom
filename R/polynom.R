@@ -13,7 +13,6 @@ polynom <- function(x) {
 #' @return a language object
 #' @export
 polynom.vector <- function(x) {
-  l <- length(x)
   ee <- list()
   for (i in seq_along(x)) {
     ee[[i]] <- bquote(.(x[i])*x^.(i-1))
