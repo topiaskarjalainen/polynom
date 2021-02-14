@@ -1,7 +1,9 @@
-
-
-setGeneric("polynom", function(x) attributes(x))
-
+#' Create polynom
+#'
+#' Create polynom
+#' @param x a vector or list
+#' @value Returns a language object
+#' @export
 polynom <- function(x) {
   UseMethod("polynom")
 }
@@ -36,7 +38,7 @@ polynom.vector <- function(x) {
 
 
 polynom.list <- function(x) {
-
+  1:32
 }
 
 
