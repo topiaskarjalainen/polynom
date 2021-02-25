@@ -14,7 +14,7 @@ polynom <- function(x) {
 #' @param x a vector
 #' @return a language object
 #' @export
-polynom.vector <- function(x) {
+polynom.default <- function(x) {
   ee <- list()
   for (i in seq_along(x)) {
     ee[[i]] <- bquote(.(x[i])*x^.(i-1))
@@ -34,12 +34,6 @@ polynom.vector <- function(x) {
   .callFromList(l)
 }
 
-(ll <- polynom.vector(c(1,2,3)))
+(ll <- polynom(c(1,2,3)))
 
-
-polynom.list <- function(x) {
-  1:32
-}
-
-
-expression()
+#expression()
