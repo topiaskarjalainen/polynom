@@ -25,6 +25,7 @@ polynom.default <- function(x) {
 #' Makes a call out of a list
 #'
 #' internal function
+#' @param .list  a list
 .callFromList <- function(.list) {
   a <- length(.list)
   if (a == 1) return(.list[[1]])

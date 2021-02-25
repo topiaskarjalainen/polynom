@@ -6,6 +6,9 @@
 \usage{
 .callFromList(.list)
 }
+\arguments{
+\item{.list}{a list}
+}
 \description{
 internal function
 }
