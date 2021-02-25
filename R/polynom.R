@@ -35,6 +35,17 @@ polynom.default <- function(x) {
   .callFromList(l)
 }
 
-(ll <- polynom(c(1,6,3)))
 
-#expression()
+#' Construct from list
+#'
+#' @param x a list where the names are the powers and values are the coeficcients
+#' @export
+polynom.list <- function(x) {
+  ee <- lapply(seq_along(x), function(e, n, i) {
+    bquote(.(e[[i]]) * x^.(as.numeric(n[i])))
+    },
+    n=names(x),
+    e=x
+  )
+  .callFromList(ee)
+}
