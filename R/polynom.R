@@ -2,7 +2,7 @@
 #'
 #' Create polynom
 #' @param x a vector or list
-#' @value Returns a language object
+#' @return  Returns a language object
 #' @export
 polynom <- function(x) {
   UseMethod("polynom")
@@ -34,6 +34,6 @@ polynom.default <- function(x) {
   .callFromList(l)
 }
 
-(ll <- polynom(c(1,2,3)))
+(ll <- polynom(c(1,6,3)))
 
 #expression()
