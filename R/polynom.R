@@ -29,10 +29,8 @@ polynom <- function(x, ...) {
 .callFromList <- function(.list) {
   a <- length(.list)
   if (a == 1) return(.list[[1]])
-  q <- bquote(.(.list[[a]])+.(.list[[a-1]]))
-  l <- .list[1:a-1]
-  l[[a-1]] <- q
-  .callFromList(l)
+  .list[[a-1]] <- bquote(.(.list[[a]])+.(.list[[a-1]]))
+  .callFromList(.list[1:a-1])
 }
 
 
