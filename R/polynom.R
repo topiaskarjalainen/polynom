@@ -5,7 +5,7 @@
 #' @return  Returns a language object
 #' @export
 polynom <- function(x) {
-  UseMethod("polynom")
+  UseMethod("polynom", x)
 }
 
 #' Make polynom out of a vector
@@ -13,8 +13,7 @@ polynom <- function(x) {
 #' Makes a polynom out of vector x.
 #' @param x a vector
 #' @return a language object
-#' @export
-polynom.default <- function(x) {
+.polynom.vector <- function(x) {
   ee <- list()
   for (i in seq_along(x)) {
     ee[[i]] <- bquote(.(x[i])*x^.(i-1))
@@ -48,4 +47,15 @@ polynom.list <- function(x) {
     e=x
   )
   .callFromList(ee)
+}
+
+#' Make a polynom
+#'
+#' @param x an argument vector
+#' @param ... write like "'3' = 2", and so on like in polynom.list
+#' @export
+polynom.default <- function(x = NULL, ...) {
+  if (!is.null(x)) return(.polynom.vector)
+  ee <- list(...)
+  polynom.list(ee)
 }

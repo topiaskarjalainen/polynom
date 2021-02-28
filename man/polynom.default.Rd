@@ -2,16 +2,15 @@
 % Please edit documentation in R/polynom.R
 \name{polynom.default}
 \alias{polynom.default}
-\title{Make polynom out of a vector}
+\title{Make a polynom}
 \usage{
-\method{polynom}{default}(x)
+\method{polynom}{default}(x, ...)
 }
 \arguments{
-\item{x}{a vector}
-}
-\value{
-a language object
+\item{x}{an argument}
+
+\item{...}{write like "'3' = 2", and so on like in polynom.list}
 }
 \description{
-Makes a polynom out of vector x.
+Make a polynom
 }
