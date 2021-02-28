@@ -7,7 +7,7 @@
 \method{polynom}{default}(x = NULL, ...)
 }
 \arguments{
-\item{x}{an argument vector}
+\item{x}{an argument vector or list}
 
 \item{...}{write like "'3' = 2", and so on like in polynom.list}
 }

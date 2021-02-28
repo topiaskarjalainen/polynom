@@ -4,10 +4,12 @@
 \alias{polynom}
 \title{Create polynom}
 \usage{
-polynom(x)
+polynom(x, ...)
 }
 \arguments{
-\item{x}{a vector or list}
+\item{x}{an argument vector or list}
+
+\item{...}{write like "'3' = 2", and so on like in polynom.list}
 }
 \value{
 Returns a language object

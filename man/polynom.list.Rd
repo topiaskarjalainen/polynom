@@ -4,10 +4,12 @@
 \alias{polynom.list}
 \title{Construct from list}
 \usage{
-\method{polynom}{list}(x)
+\method{polynom}{list}(x, ...)
 }
 \arguments{
 \item{x}{a list where the names are the powers and values are the coeficcients}
+
+\item{...}{additional arguments}
 }
 \description{
 Construct from list

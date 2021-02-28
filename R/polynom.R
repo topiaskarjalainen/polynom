@@ -1,11 +1,12 @@
 #' Create polynom
 #'
 #' Create polynom
-#' @param x a vector or list
+#' @param x an argument vector or list
+#' @param ... write like "'3' = 2", and so on like in polynom.list
 #' @return  Returns a language object
 #' @export
-polynom <- function(x) {
-  UseMethod("polynom", x)
+polynom <- function(x, ...) {
+  UseMethod("polynom")
 }
 
 #' Make polynom out of a vector
@@ -38,8 +39,9 @@ polynom <- function(x) {
 #' Construct from list
 #'
 #' @param x a list where the names are the powers and values are the coeficcients
+#' @param ... additional arguments
 #' @export
-polynom.list <- function(x) {
+polynom.list <- function(x, ...) {
   ee <- lapply(seq_along(x), function(e, n, i) {
     bquote(.(e[[i]]) * x^.(as.numeric(n[i])))
     },
@@ -51,11 +53,11 @@ polynom.list <- function(x) {
 
 #' Make a polynom
 #'
-#' @param x an argument vector
+#' @param x an argument vector or list
 #' @param ... write like "'3' = 2", and so on like in polynom.list
 #' @export
 polynom.default <- function(x = NULL, ...) {
-  if (!is.null(x)) return(.polynom.vector)
+  if(is.vector(x)) return(.polynom.vector(x))
   ee <- list(...)
   polynom.list(ee)
 }
