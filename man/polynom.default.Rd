@@ -4,10 +4,10 @@
 \alias{polynom.default}
 \title{Make a polynom}
 \usage{
-\method{polynom}{default}(x, ...)
+\method{polynom}{default}(x = NULL, ...)
 }
 \arguments{
-\item{x}{an argument}
+\item{x}{an argument vector}
 
 \item{...}{write like "'3' = 2", and so on like in polynom.list}
 }
